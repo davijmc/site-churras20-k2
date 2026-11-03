@@ -238,6 +238,29 @@
             </figcaption>
           </figure>
         </div>
+
+        <!-- Cards da Tradição: Hino e Planejamento Estratégico (Lado a Lado) -->
+        <div class="lore-cards-grid">
+          <button
+            type="button"
+            class="lore-card royal-corners"
+            data-doc-target="hino"
+            aria-haspopup="dialog"
+            aria-label="Abrir Hino da República K2"
+          >
+            <h3 class="lore-card-title">Hino da República K2</h3>
+          </button>
+
+          <button
+            type="button"
+            class="lore-card royal-corners"
+            data-doc-target="planejamento"
+            aria-haspopup="dialog"
+            aria-label="Abrir Planejamento Estratégico da República K2"
+          >
+            <h3 class="lore-card-title">Planejamento Estratégico</h3>
+          </button>
+        </div>
       </div>
 
       <!-- Divisor Inferior Bonina -> Obsidiana -->
@@ -668,6 +691,68 @@
       <p class="lightbox-caption" id="lightbox-caption">Moradores e ex-moradores da República K2 reunidos</p>
     </div>
   </dialog>
+
+  <!-- MODAL NATIVO (<dialog>) PARA DOCUMENTOS (HINO E PLANEJAMENTO) -->
+  <dialog class="royal-doc-modal" id="doc-modal" aria-labelledby="doc-modal-title">
+    <div class="doc-modal-frame royal-corners">
+      <div class="doc-modal-topbar">
+        <h3 class="doc-modal-title" id="doc-modal-title">Documento</h3>
+        <button type="button" class="lightbox-close" id="doc-modal-close-btn" aria-label="Fechar documento">
+          <span>Fechar</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="doc-modal-body" id="doc-modal-content">
+        <!-- Conteúdo integral carregado dinamicamente -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Templates com o conteúdo integral de cada documento -->
+  <template id="tmpl-hino">
+    <div class="doc-poem-layout">
+      <p class="poem-stanza">À querida república K2 de hoje antes e depois,</p>
+      <p class="poem-stanza">Onde os bons momentos vividos<br>Nunca muito sofridos<br>jamais serão esquecidos.</p>
+      <p class="poem-stanza">Rep que ninguém contesta.<br>De bixete folgada a veterana tarada<br>E até com as namoradas a gente faz a festa.</p>
+      <p class="poem-stanza">A cada caixa comprada uma fraqueza,<br>A cada pinga tomada uma certeza,<br>De que pro resto da vida eu saberei<br>Que uma nova família eu ganhei.</p>
+      <p class="poem-chorus">Cume, Cume, Cume, K2!</p>
+      <p class="doc-signature">Caio, Primavera, Chefe — Fevereiro de 2015</p>
+    </div>
+  </template>
+
+  <template id="tmpl-planejamento">
+    <div class="doc-strat-layout">
+      <div class="strat-section">
+        <h4 class="strat-heading">Missão</h4>
+        <p>Transformar bixos desorientados em adultos funcionais, enquanto criamos memórias e formamos amizades pra vida toda. Tudo isso com um toque de aprendizado, porque, afinal, tem faculdade no meio.</p>
+      </div>
+
+      <div class="strat-section">
+        <h4 class="strat-heading">Visão</h4>
+        <p>Ser "A República". Aquela que todos falam bem, que os veteranos morrem de saudades e os bixos sonham em entrar. Queremos que nossos membros saiam daqui prontos pra arrasar na vida (e com boas histórias pra contar).</p>
+      </div>
+
+      <div class="strat-section">
+        <h4 class="strat-heading">Valores</h4>
+        <ul class="strat-values">
+          <li><strong>Respeito:</strong> Valorizamos a convivência harmoniosa e o trato digno entre todos os membros. O respeito mútuo é essencial para um ambiente de aprendizado saudável e produtivo.</li>
+          <li><strong>Parceria:</strong> A gente joga junto, seja no truco, nos churrascos ou na hora de estudar (ou fazer um mutirão pra salvar os amigos de DPs). Aqui, ninguém fica pra trás — a não ser quem se atrasa para ir ao DA.</li>
+          <li><strong>Comprometimento:</strong> A gente leva a sério as responsabilidades. Quer dizer: o que importa é passar de ano, pagar as contas, não deixar de ir ao DA e manter a casa de pé (literalmente).</li>
+          <li><strong>Alegria com Responsabilidade:</strong> Entendemos que a vida universitária é um período único, repleto de descobertas, lazer e criação de memórias inesquecíveis. Aqui, a diversão é sagrada, sempre respeitando os limites éticos, a integridade física e emocional de todos, e o patrimônio público e privado. Aprontar com criatividade e responsabilidade faz parte da construção de experiências marcantes.</li>
+        </ul>
+      </div>
+
+      <div class="strat-section">
+        <h4 class="strat-heading">Resumo da Ópera</h4>
+        <p>Na República K2, não se formam somente profissionais, mas também pessoas com histórias épicas, hematomas e laços de amizade. Crescemos juntos, nos ajudamos, damos risadas e ainda saímos prontos pra encarar o mundo.</p>
+      </div>
+
+      <p class="doc-signature">14/12/24 – Comemoração 18 anos</p>
+    </div>
+  </template>
 
   <!-- RODAPÉ IMPERIAL -->
   <footer class="site-footer">

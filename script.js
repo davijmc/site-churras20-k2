@@ -114,6 +114,57 @@
     });
   }
 
+  // 3.1. MODAL NATIVO (<dialog>) PARA DOCUMENTOS (HINO E PLANEJAMENTO)
+  const docModal = document.getElementById('doc-modal');
+  const docModalTitle = document.getElementById('doc-modal-title');
+  const docModalContent = document.getElementById('doc-modal-content');
+  const docModalCloseBtn = document.getElementById('doc-modal-close-btn');
+  const docCards = document.querySelectorAll('.lore-card[data-doc-target]');
+
+  const docData = {
+    hino: {
+      title: 'Hino da República K2',
+      tmplId: 'tmpl-hino'
+    },
+    planejamento: {
+      title: 'Planejamento Estratégico da República K2',
+      tmplId: 'tmpl-planejamento'
+    }
+  };
+
+  if (docModal && docModalTitle && docModalContent && docCards.length) {
+    docCards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        const target = card.getAttribute('data-doc-target');
+        const info = docData[target];
+        if (!info) return;
+
+        const tmpl = document.getElementById(info.tmplId);
+        if (!tmpl) return;
+
+        docModalTitle.textContent = info.title;
+        docModalContent.innerHTML = '';
+        docModalContent.appendChild(tmpl.content.cloneNode(true));
+
+        if (typeof docModal.showModal === 'function') {
+          docModal.showModal();
+        }
+      });
+    });
+
+    if (docModalCloseBtn) {
+      docModalCloseBtn.addEventListener('click', function () {
+        docModal.close();
+      });
+    }
+
+    docModal.addEventListener('click', function (event) {
+      if (event.target === docModal) {
+        docModal.close();
+      }
+    });
+  }
+
   // 4. BOTÃO COPIAR LINK DO GOOGLE MAPS
   const copyBtn = document.getElementById('copy-map-btn');
   if (copyBtn) {
