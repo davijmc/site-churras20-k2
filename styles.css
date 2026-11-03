@@ -1,0 +1,1415 @@
+/* ==========================================================================
+   REPÚBLICA K2 — CHURRASCO DE 20 ANOS (2006–2026)
+   Direção Visual: Império da Montanha & Brasa (Vermelho Bonina + Ouro Real)
+   ========================================================================== */
+
+:root {
+  /* Paleta em Hex + OKLCH */
+  --bg-obsidian: #0e0809;
+  --bg-obsidian: oklch(0.14 0.02 18);
+
+  --bg-obsidian-raised: #170d0f;
+  --bg-obsidian-raised: oklch(0.18 0.03 18);
+
+  --bg-bonina: #6b0f1a;
+  --bg-bonina: oklch(0.32 0.13 20);
+
+  --bg-bonina-deep: #480911;
+  --bg-bonina-deep: oklch(0.24 0.10 20);
+
+  --bg-bonina-panel: #2b070c;
+  --bg-bonina-panel: oklch(0.20 0.07 19);
+
+  --gold-imperial: #f5c518;
+  --gold-imperial: oklch(0.83 0.17 85);
+
+  --gold-royal: #d4af37;
+  --gold-royal: oklch(0.74 0.14 82);
+
+  --gold-border: rgba(212, 175, 55, 0.42);
+  --gold-border-strong: rgba(245, 197, 24, 0.78);
+
+  --ember-glow: #e85d1a;
+  --text-ivory: #f9f5eb;
+  --text-warm: #e4d5c3;
+  --text-ink: #14090b;
+
+  /* Tipografia */
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-body: 'Archivo', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Escala de Z-Index Semântica */
+  --z-canvas: 1;
+  --z-content: 2;
+  --z-sticky: 20;
+  --z-modal: 50;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  background-color: var(--bg-obsidian);
+  color: var(--text-ivory);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  scrollbar-color: var(--gold-royal) var(--bg-obsidian);
+  caret-color: var(--gold-imperial);
+}
+
+::selection {
+  background-color: var(--gold-imperial);
+  color: var(--text-ink);
+}
+
+body {
+  background-color: var(--bg-obsidian);
+  color: var(--text-ivory);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  text-underline-offset: 0.22em;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold-imperial);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+}
+
+p {
+  max-width: 65ch;
+  text-wrap: pretty;
+}
+
+.gold-solid {
+  color: var(--gold-imperial);
+}
+
+.container {
+  max-width: 1220px;
+  width: 100%;
+  margin-inline: auto;
+  padding: 1rem 1.5rem;
+}
+
+/* ==========================================================================
+   CANTONEIRAS HERÁLDICAS (.royal-corners)
+   ========================================================================== */
+.royal-corners {
+  position: relative;
+}
+
+.royal-corners::before,
+.royal-corners::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: var(--gold-imperial);
+  border-style: solid;
+  pointer-events: none;
+}
+
+.royal-corners::before {
+  top: 4px;
+  left: 4px;
+  border-width: 2px 0 0 2px;
+}
+
+.royal-corners::after {
+  bottom: 4px;
+  right: 4px;
+  border-width: 0 2px 2px 0;
+}
+
+/* ==========================================================================
+   HEADER IMPERIAL & ATALHOS MOBILE
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background-color: var(--bg-obsidian);
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  min-height: 4.5rem;
+  padding-block: 0.5rem;
+}
+
+.brand-crest {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 44px;
+}
+
+.brand-crest-img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: contain;
+}
+
+.brand-crest-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--gold-imperial);
+  letter-spacing: 0.04em;
+}
+
+.brand-years {
+  font-size: 0.82rem;
+  color: var(--text-warm);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-ivory);
+  padding-block: 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--gold-imperial);
+  border-bottom-color: var(--gold-imperial);
+}
+
+.header-date-seal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 44px;
+  background-color: var(--bg-bonina);
+  color: var(--gold-imperial);
+  border: 1px solid var(--gold-border-strong);
+  padding: 0.45rem 0.95rem;
+  border-radius: 3px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+  transition: background-color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.header-date-seal:hover {
+  background-color: var(--bg-bonina-deep);
+}
+
+.mobile-quick-nav {
+  display: none;
+  border-top: 1px solid var(--gold-border);
+  background-color: var(--bg-bonina-panel);
+  overflow-x: auto;
+}
+
+.mobile-nav-item {
+  flex: 1 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding-inline: 0.85rem;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-ivory);
+  border-right: 1px solid var(--gold-border);
+}
+
+.mobile-nav-item:last-child {
+  border-right: none;
+}
+
+.mobile-nav-item:hover,
+.mobile-nav-item:active {
+  color: var(--gold-imperial);
+  background-color: var(--bg-bonina-deep);
+}
+
+/* ==========================================================================
+   SEÇÃO 1: HERO — O DECRETO REAL & MONTANHA K2
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  padding-top: clamp(2.5rem, 5vw, 4.5rem);
+  padding-bottom: clamp(6rem, 10vw, 8.5rem);
+  background:
+    radial-gradient(circle at 26% 42%, rgba(107, 15, 26, 0.58) 0%, rgba(14, 8, 9, 0) 62%),
+    linear-gradient(180deg, var(--bg-obsidian) 0%, #19090d 65%, var(--bg-bonina-deep) 100%);
+  overflow: hidden;
+}
+
+.ember-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-canvas);
+  pointer-events: none;
+}
+
+.hero-grid {
+  position: relative;
+  z-index: var(--z-content);
+  display: grid;
+  grid-template-columns: minmax(280px, 460px) 1fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.5rem);
+}
+
+.hero-crest-showcase {
+  display: flex;
+  justify-content: center;
+}
+
+.crest-pedestal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem;
+  background: radial-gradient(circle, rgba(232, 93, 26, 0.24) 0%, rgba(107, 15, 26, 0.18) 52%, transparent 74%);
+}
+
+.hero-logo-img {
+  width: min(100%, 450px);
+  height: auto;
+  margin-inline: auto;
+}
+
+.altitude-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--bg-bonina-panel);
+  color: var(--gold-imperial);
+  border: 1px solid var(--gold-border-strong);
+  padding: 0.45rem 0.95rem;
+  border-radius: 3px;
+  font-family: var(--font-display);
+  font-size: 0.84rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.35rem;
+}
+
+.royal-seal-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background-color: var(--bg-bonina);
+  color: var(--gold-imperial);
+  border: 1px solid var(--gold-border-strong);
+  padding: 0.45rem 0.95rem;
+  border-radius: 3px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-title {
+  font-size: clamp(2.25rem, 4.5vw, 3.85rem);
+  color: var(--text-ivory);
+  line-height: 1.08;
+  letter-spacing: 0.01em;
+}
+
+.hero-lead {
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  color: var(--text-warm);
+  line-height: 1.65;
+}
+
+/* Placa de Decreto: Data, Hora e Local */
+.decree-plaque {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: var(--bg-bonina-panel);
+  border: 1px solid var(--gold-border-strong);
+  outline: 1px solid var(--gold-border);
+  outline-offset: -5px;
+  padding: 1.15rem 1.35rem;
+  border-radius: 4px;
+}
+
+.decree-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.decree-label {
+  font-size: 0.84rem;
+  color: var(--text-warm);
+  font-weight: 600;
+}
+
+.decree-value {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--gold-imperial);
+  font-variant-numeric: tabular-nums;
+}
+
+.decree-divider {
+  width: 1px;
+  height: 2.4rem;
+  background-color: var(--gold-border);
+}
+
+/* Contagem Regressiva */
+.countdown-frame {
+  width: 100%;
+  background-color: var(--bg-obsidian-raised);
+  border: 1px solid var(--gold-border);
+  padding: 1rem 1.25rem;
+  border-radius: 4px;
+}
+
+.countdown-header {
+  margin-bottom: 0.65rem;
+}
+
+.countdown-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-warm);
+}
+
+.countdown-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  max-width: 480px;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-bonina-deep);
+  border: 1px solid var(--gold-border);
+  padding: 0.55rem 0.85rem;
+  min-width: 4.6rem;
+  border-radius: 3px;
+}
+
+.countdown-number {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 800;
+  color: var(--gold-imperial);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.countdown-label {
+  font-size: 0.82rem;
+  color: var(--text-ivory);
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+.countdown-sep {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--gold-royal);
+}
+
+/* Botões Imperiais */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.btn-imperial {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  padding: 0.9rem 1.6rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-imperial:active {
+  transform: translateY(1px);
+}
+
+.btn-gold {
+  background-color: var(--gold-imperial);
+  color: var(--text-ink);
+  border: 1px solid var(--gold-imperial);
+}
+
+.btn-gold:hover,
+.btn-gold:focus-visible {
+  background-color: #ffd43b;
+  transform: translateY(-2px);
+}
+
+.btn-bonina {
+  background-color: var(--bg-bonina);
+  color: var(--text-ivory);
+  border: 1px solid var(--gold-border-strong);
+}
+
+.btn-bonina:hover,
+.btn-bonina:focus-visible {
+  background-color: var(--bg-bonina-deep);
+  color: var(--gold-imperial);
+  transform: translateY(-2px);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* Silhueta da Montanha K2 */
+.k2-mountain-divider {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: var(--z-content);
+}
+
+.k2-svg {
+  width: 100%;
+  height: clamp(54px, 7vw, 105px);
+  display: block;
+}
+
+/* ==========================================================================
+   SEÇÃO 2: A LENDA & IRMANDADE (BANHADA EM VERMELHO BONINA IMPERIAL)
+   ========================================================================== */
+.history-section {
+  position: relative;
+  background-color: var(--bg-bonina);
+  padding: 4.5rem 1.5rem 7.5rem 1.5rem;
+}
+
+.heraldic-crest-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+  color: var(--gold-imperial);
+}
+
+.crest-line {
+  height: 1px;
+  width: min(180px, 28vw);
+  background-color: var(--gold-border-strong);
+}
+
+.history-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 1.15fr;
+  align-items: center;
+  gap: clamp(2rem, 4.5vw, 4rem);
+}
+
+.section-heading {
+  font-size: clamp(1.85rem, 3.3vw, 2.85rem);
+  color: var(--text-ivory);
+  margin-bottom: 1.25rem;
+}
+
+.section-subcopy {
+  font-size: 1.08rem;
+  color: var(--text-warm);
+  line-height: 1.65;
+}
+
+.history-paragraph {
+  font-size: 1.06rem;
+  color: var(--text-ivory);
+  margin-bottom: 1.15rem;
+  line-height: 1.72;
+}
+
+.history-paragraph strong {
+  color: var(--gold-imperial);
+}
+
+.pillars-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+  margin-top: 1.8rem;
+}
+
+.pillar-box {
+  background-color: var(--bg-bonina-deep);
+  border: 1px solid var(--gold-border-strong);
+  padding: 1rem 0.9rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.pillar-num {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  font-weight: 800;
+  color: var(--gold-imperial);
+  font-variant-numeric: tabular-nums;
+}
+
+.pillar-caption {
+  font-size: 0.88rem;
+  color: var(--text-ivory);
+  line-height: 1.35;
+}
+
+/* Moldura Real para Fotos com Gatilho de Lightbox */
+.royal-portrait-frame {
+  background-color: var(--bg-bonina-deep);
+  border: 2px solid var(--gold-royal);
+  outline: 1px solid var(--gold-border);
+  outline-offset: -8px;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.portrait-zoom-trigger {
+  position: relative;
+  display: block;
+  width: 100%;
+  border: 1px solid var(--gold-border);
+  overflow: hidden;
+  text-align: left;
+}
+
+.portrait-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.portrait-zoom-trigger:hover .portrait-img,
+.portrait-zoom-trigger:focus-visible .portrait-img {
+  transform: scale(1.025);
+}
+
+.zoom-pill {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  background-color: var(--bg-obsidian);
+  color: var(--gold-imperial);
+  border: 1px solid var(--gold-border-strong);
+  padding: 0.4rem 0.8rem;
+  border-radius: 3px;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.portrait-caption {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-top: 0.9rem;
+  padding-inline: 0.35rem;
+  font-size: 0.92rem;
+  color: var(--text-ivory);
+}
+
+.caption-crown {
+  color: var(--gold-imperial);
+  font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   SEÇÃO 3: O BANQUETE REAL — CARDÁPIO COMPLETO & DRINKS
+   ========================================================================== */
+.banquet-section {
+  background-color: var(--bg-obsidian);
+  padding: 5rem 1.5rem;
+}
+
+.banquet-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2.75rem;
+}
+
+/* Barra de Filtro do Cardápio */
+.banquet-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 1.75rem;
+}
+
+.filter-chip {
+  min-height: 44px;
+  padding: 0.55rem 1.15rem;
+  background-color: var(--bg-bonina-panel);
+  color: var(--text-ivory);
+  border: 1px solid var(--gold-border);
+  border-radius: 3px;
+  font-family: var(--font-display);
+  font-size: 0.86rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  transition: background-color 0.2s cubic-bezier(0.22, 1, 0.36, 1), color 0.2s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.filter-chip:hover {
+  border-color: var(--gold-border-strong);
+  color: var(--gold-imperial);
+}
+
+.filter-chip.is-active {
+  background-color: var(--gold-imperial);
+  color: var(--text-ink);
+  border-color: var(--gold-imperial);
+}
+
+.banquet-board,
+.drinks-decree {
+  background-color: var(--bg-obsidian-raised);
+  border: 1px solid var(--gold-border-strong);
+  outline: 1px solid var(--gold-border);
+  outline-offset: -7px;
+  padding: 2.25rem;
+  border-radius: 4px;
+  margin-bottom: 2.75rem;
+}
+
+.banquet-board[hidden],
+.drinks-decree[hidden] {
+  display: none;
+}
+
+.board-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.35rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.board-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.board-icon {
+  color: var(--gold-imperial);
+  flex-shrink: 0;
+}
+
+.board-title {
+  font-size: clamp(1.35rem, 2.3vw, 1.85rem);
+  color: var(--gold-imperial);
+}
+
+.board-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-warm);
+}
+
+.board-seal {
+  background-color: var(--bg-bonina);
+  color: var(--gold-imperial);
+  border: 1px solid var(--gold-border-strong);
+  padding: 0.4rem 0.9rem;
+  border-radius: 3px;
+  font-family: var(--font-display);
+  font-size: 0.84rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Banner de Honra: Costela de Chão */
+.featured-cut-banner {
+  background-color: var(--bg-bonina);
+  border: 1px solid var(--gold-border-strong);
+  padding: 1.4rem 1.6rem;
+  border-radius: 4px;
+  margin-bottom: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.featured-cut-badge {
+  display: inline-block;
+  align-self: flex-start;
+  background-color: var(--gold-imperial);
+  color: var(--text-ink);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 2px;
+}
+
+.featured-cut-name {
+  font-size: clamp(1.45rem, 2.4vw, 1.9rem);
+  color: var(--gold-imperial);
+  margin-bottom: 0.25rem;
+}
+
+.featured-cut-desc {
+  color: var(--text-ivory);
+  font-size: 1rem;
+}
+
+/* Lista dos Demais 7 Cortes */
+.meats-roster {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.9rem;
+}
+
+.meat-item {
+  background-color: var(--bg-bonina-panel);
+  border: 1px solid var(--gold-border);
+  padding: 1rem 1.15rem;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.meat-item-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.meat-name {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--text-ivory);
+}
+
+.meat-fire {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gold-imperial);
+  background-color: var(--bg-bonina-deep);
+  border: 1px solid var(--gold-border);
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+}
+
+.meat-tag {
+  font-size: 0.88rem;
+  color: var(--text-warm);
+}
+
+/* Guarnições & Acompanhamentos */
+.sides-Split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2rem;
+}
+
+.sides-heading {
+  font-size: 1.2rem;
+  color: var(--gold-imperial);
+  margin-bottom: 1rem;
+}
+
+.sides-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.65rem 1.25rem;
+}
+
+.sides-list li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px dotted rgba(212, 175, 55, 0.35);
+}
+
+.sides-list strong {
+  color: var(--text-ivory);
+  font-weight: 600;
+}
+
+.sides-list span {
+  font-size: 0.88rem;
+  color: var(--text-warm);
+  text-align: right;
+}
+
+.banquet-note {
+  margin-top: 1.5rem;
+  background-color: var(--bg-bonina-deep);
+  border: 1px solid var(--gold-border);
+  padding: 1rem 1.15rem;
+  border-radius: 3px;
+  font-size: 0.94rem;
+  color: var(--text-ivory);
+}
+
+.banquet-note strong {
+  color: var(--gold-imperial);
+}
+
+/* Carta de Drinks (5 Drinks) */
+.drinks-ledger {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.15rem;
+}
+
+.drink-entry {
+  background-color: var(--bg-bonina-panel);
+  border: 1px solid var(--gold-border);
+  padding: 1.25rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.drink-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.drink-name {
+  font-size: 1.2rem;
+  color: var(--gold-imperial);
+}
+
+.drink-Number {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-warm);
+  font-variant-numeric: tabular-nums;
+}
+
+.drink-profile {
+  font-size: 0.9rem;
+  color: var(--text-warm);
+}
+
+.drink-ingredients {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: auto;
+}
+
+.drink-ingredients li {
+  background-color: var(--bg-obsidian);
+  border: 1px solid var(--gold-border);
+  color: var(--text-ivory);
+  font-size: 0.88rem;
+  padding: 0.28rem 0.68rem;
+  border-radius: 3px;
+}
+
+/* ==========================================================================
+   SEÇÃO 4: ATRAÇÕES & FESTIVIDADES (PURA LEVADA, TALES E BINGO)
+   ========================================================================== */
+.attractions-section {
+  background: linear-gradient(180deg, var(--bg-obsidian) 0%, var(--bg-bonina-deep) 50%, var(--bg-obsidian) 100%);
+  padding: 5rem 1.5rem;
+  border-top: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.attractions-layout {
+  display: grid;
+  grid-template-columns: minmax(290px, 460px) 1fr;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 4.25rem);
+}
+
+.poster-frame {
+  background-color: var(--bg-obsidian);
+  border: 2px solid var(--gold-royal);
+  outline: 1px solid var(--gold-border);
+  outline-offset: -8px;
+  padding: 0.85rem;
+  border-radius: 4px;
+}
+
+.poster-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.poster-frame .portrait-zoom-trigger:hover .poster-img {
+  transform: scale(1.02);
+}
+
+.lineup-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  margin-top: 1.75rem;
+}
+
+.lineup-item {
+  background-color: var(--bg-obsidian-raised);
+  border: 1px solid var(--gold-border);
+  padding: 1.35rem 1.5rem;
+  border-radius: 4px;
+}
+
+.lineup-bingo {
+  background-color: var(--bg-bonina);
+  border-color: var(--gold-border-strong);
+}
+
+.lineup-badge {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--gold-imperial);
+  margin-bottom: 0.3rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.lineup-artist {
+  font-size: clamp(1.3rem, 2.2vw, 1.65rem);
+  color: var(--text-ivory);
+  margin-bottom: 0.15rem;
+}
+
+.lineup-genre {
+  font-weight: 700;
+  font-size: 0.94rem;
+  color: var(--gold-imperial);
+  margin-bottom: 0.5rem;
+}
+
+.lineup-desc {
+  font-size: 0.98rem;
+  color: var(--text-warm);
+}
+
+.lineup-bingo .lineup-desc {
+  color: var(--text-ivory);
+}
+
+/* ==========================================================================
+   SEÇÃO 5: O DOMÍNIO REAL — LOCALIZAÇÃO (RECANTO DAS PALMEIRAS)
+   ========================================================================== */
+.venue-section {
+  background-color: var(--bg-obsidian);
+  padding: 5rem 1.5rem;
+}
+
+.venue-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2.75rem;
+}
+
+.venue-showcase-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.95fr;
+  gap: clamp(1.75rem, 3.5vw, 2.75rem);
+  align-items: stretch;
+}
+
+.venue-photo-frame {
+  background-color: var(--bg-obsidian-raised);
+  border: 2px solid var(--gold-royal);
+  padding: 0.95rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.venue-zoom-btn {
+  height: 100%;
+}
+
+.venue-photo-img {
+  width: 100%;
+  height: 100%;
+  max-height: 460px;
+  object-fit: cover;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.venue-zoom-btn:hover .venue-photo-img {
+  transform: scale(1.025);
+}
+
+.venue-photo-caption {
+  padding-top: 0.8rem;
+  font-size: 0.92rem;
+  color: var(--text-warm);
+}
+
+.venue-map-panel {
+  background-color: var(--bg-bonina-panel);
+  border: 1px solid var(--gold-border-strong);
+  padding: 1.5rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.15rem;
+}
+
+.venue-info-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.venue-info-row {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.venue-info-label {
+  font-size: 0.84rem;
+  color: var(--text-warm);
+}
+
+.venue-info-value {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--gold-imperial);
+  font-variant-numeric: tabular-nums;
+}
+
+.map-embed-frame {
+  border: 1px solid var(--gold-border-strong);
+  border-radius: 3px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.venue-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ==========================================================================
+   MODAL NATIVO (<dialog>) — LIGHTBOX DE FOTOS
+   ========================================================================== */
+.royal-lightbox {
+  margin: auto;
+  width: min(1040px, 94vw);
+  max-height: 92vh;
+  background-color: var(--bg-obsidian);
+  color: var(--text-ivory);
+  border: 2px solid var(--gold-royal);
+  border-radius: 4px;
+  padding: 0;
+  z-index: var(--z-modal);
+}
+
+.royal-lightbox::backdrop {
+  background-color: rgba(8, 4, 5, 0.88);
+}
+
+.lightbox-frame {
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.lightbox-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.lightbox-brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--gold-imperial);
+}
+
+.lightbox-close {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  padding: 0.4rem 0.95rem;
+  background-color: var(--bg-bonina);
+  color: var(--gold-imperial);
+  border: 1px solid var(--gold-border-strong);
+  border-radius: 3px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.86rem;
+}
+
+.lightbox-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #080405;
+  border: 1px solid var(--gold-border);
+  overflow: hidden;
+}
+
+.lightbox-img {
+  max-height: 72vh;
+  width: auto;
+  object-fit: contain;
+}
+
+.lightbox-caption {
+  font-size: 0.95rem;
+  color: var(--text-warm);
+  text-align: center;
+  max-width: 100%;
+}
+
+/* ==========================================================================
+   RODAPÉ IMPERIAL
+   ========================================================================== */
+.site-footer {
+  background-color: var(--bg-bonina-deep);
+  border-top: 2px solid var(--gold-royal);
+  padding-block: 3rem;
+  text-align: center;
+}
+
+.footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-crest {
+  width: 6rem;
+  height: 6rem;
+  object-fit: contain;
+  margin-bottom: 0.35rem;
+}
+
+.footer-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--gold-imperial);
+}
+
+.footer-meta {
+  font-size: 0.95rem;
+  color: var(--text-ivory);
+}
+
+.footer-motto {
+  font-size: 0.88rem;
+  color: var(--text-warm);
+  margin-top: 0.25rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (TABLET & MOBILE)
+   ========================================================================== */
+@media (max-width: 980px) {
+  .hero-grid,
+  .history-layout,
+  .attractions-layout,
+  .venue-showcase-grid,
+  .sides-Split {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-crest-showcase {
+    order: -1;
+  }
+
+  .hero-logo-img {
+    width: min(78vw, 340px);
+  }
+
+  .poster-showcase {
+    max-width: 440px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    scroll-padding-top: 7.5rem;
+  }
+
+  .site-nav {
+    display: none;
+  }
+
+  .mobile-quick-nav {
+    display: flex;
+  }
+
+  .decree-divider {
+    display: none;
+  }
+
+  .decree-plaque {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pillars-row {
+    grid-template-columns: 1fr;
+  }
+
+  .countdown-unit {
+    min-width: 3.9rem;
+    padding: 0.45rem 0.55rem;
+  }
+}
+
+/* ==========================================================================
+   ACESSIBILIDADE — REDUCED MOTION
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .ember-canvas {
+    display: none;
+  }
+}

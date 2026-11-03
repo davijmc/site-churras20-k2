@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Churrasco 20 Anos — República K2 | 14/11 às 12h</title>
+  <meta name="description" content="Convite oficial do Churrasco de 20 Anos da República K2 (2006–2026). Dia 14/11 a partir das 12h no Recanto das Palmeiras. Costela de chão, open bar de drinks, Pagode Pura Levada, Tales e Show de Prêmios.">
+  <meta name="theme-color" content="#6B0F1A">
+  <link rel="icon" type="image/png" href="imagens/Logo%20Churras.png">
+
+  <!-- Google Fonts: Cinzel (Inscrição Imperial) + Archivo (Corpo Contemporâneo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cinzel:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Barra de Navegação Imperial -->
+  <header class="site-header" id="topo">
+    <div class="header-inner container">
+      <a href="#topo" class="brand-crest" aria-label="República K2 - Churrasco 20 Anos">
+        <img src="imagens/Logo%20Churras.png" alt="Brasão República K2 Churrasco 20 Anos" class="brand-crest-img" width="48" height="48">
+        <div class="brand-crest-text">
+          <span class="brand-name">República K2</span>
+          <span class="brand-years">20 Anos • 2006–2026</span>
+        </div>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegação Principal">
+        <a href="#historia" class="nav-link">A História</a>
+        <a href="#banquete" class="nav-link">O Banquete</a>
+        <a href="#drinks" class="nav-link">Drinks</a>
+        <a href="#atracoes" class="nav-link">Atrações</a>
+        <a href="#local" class="nav-link">O Local</a>
+      </nav>
+
+      <div class="header-cta-group">
+        <a href="#local" class="header-date-seal">
+          <svg class="seal-crown" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 18H21V20H3V18ZM3 15L5 7L9.5 11.5L12 5L14.5 11.5L19 7L21 15H3Z" fill="currentColor"/>
+          </svg>
+          <span>14/11 • 12h</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navegação Rápida Mobile (acessível no polegar com alvos >= 44px) -->
+    <nav class="mobile-quick-nav" aria-label="Atalhos das Seções">
+      <a href="#historia" class="mobile-nav-item">História</a>
+      <a href="#banquete" class="mobile-nav-item">Carnes</a>
+      <a href="#drinks" class="mobile-nav-item">Drinks</a>
+      <a href="#atracoes" class="mobile-nav-item">Atrações</a>
+      <a href="#local" class="mobile-nav-item">Mapa</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- SEÇÃO 1: HERO — O DECRETO REAL & TOPO DA MONTANHA -->
+    <section class="hero-section">
+      <canvas id="ember-canvas" class="ember-canvas" aria-hidden="true"></canvas>
+
+      <div class="container hero-grid">
+        <!-- Coluna Esquerda: Brasão Oficial em Chamas + Selo de Altitude K2 -->
+        <div class="hero-crest-showcase">
+          <div class="crest-pedestal">
+            <img
+              src="imagens/Logo%20Churras.png"
+              alt="Brasão Imperial República K2 — Churrasco 20 Anos com escudo vermelho bonina, chamas e cortes de carne na brasa"
+              class="hero-logo-img"
+              width="520"
+              height="520"
+              fetchpriority="high"
+            >
+            <div class="altitude-badge">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3L22 20H2L12 3ZM12 8.2L7.8 15.5H16.2L12 8.2Z" fill="currentColor"/>
+              </svg>
+              <span>Pico K2 • 8.611m • 20 Anos no Topo</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna Direita: Convocação Real e Contagem Regressiva -->
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Churrasco de <span class="gold-solid">20 Anos</span> da República K2
+          </h1>
+
+          <p class="hero-lead">
+            Duas décadas no topo da montanha mais desafiadora do mundo. O grande reencontro de moradores, ex-moradores, familiares e amigos para celebrar 20 anos de irmandade com costela de chão, carta de drinks e música ao vivo.
+          </p>
+
+          <!-- Decreto de Data, Hora e Domínio com Cantoneiras Heráldicas -->
+          <div class="decree-plaque royal-corners">
+            <div class="decree-item">
+              <span class="decree-label">Data Oficial</span>
+              <strong class="decree-value">14 de Novembro (Sábado)</strong>
+            </div>
+            <div class="decree-divider" aria-hidden="true"></div>
+            <div class="decree-item">
+              <span class="decree-label">Abertura dos Portões</span>
+              <strong class="decree-value">A partir das 12h (Meio-dia)</strong>
+            </div>
+            <div class="decree-divider" aria-hidden="true"></div>
+            <div class="decree-item">
+              <span class="decree-label">Domínio Real</span>
+              <strong class="decree-value">Recanto das Palmeiras</strong>
+            </div>
+          </div>
+
+          <!-- Relógio de Contagem Regressiva -->
+          <div class="countdown-frame" aria-live="polite">
+            <div class="countdown-header">
+              <span class="countdown-title" id="countdown-status-label">Tempo restante para o início do banquete (14/11 às 12h)</span>
+            </div>
+            <div class="countdown-grid" id="countdown-timer">
+              <div class="countdown-unit">
+                <span class="countdown-number" id="cd-days">12</span>
+                <span class="countdown-label">Dias</span>
+              </div>
+              <div class="countdown-sep" aria-hidden="true">:</div>
+              <div class="countdown-unit">
+                <span class="countdown-number" id="cd-hours">19</span>
+                <span class="countdown-label">Horas</span>
+              </div>
+              <div class="countdown-sep" aria-hidden="true">:</div>
+              <div class="countdown-unit">
+                <span class="countdown-number" id="cd-minutes">00</span>
+                <span class="countdown-label">Minutos</span>
+              </div>
+              <div class="countdown-sep" aria-hidden="true">:</div>
+              <div class="countdown-unit">
+                <span class="countdown-number" id="cd-seconds">00</span>
+                <span class="countdown-label">Segundos</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#banquete" class="btn-imperial btn-gold">
+              Explorar O Banquete (27 Itens)
+            </a>
+            <a
+              href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Churrasco+20+Anos+-+Rep%C3%BAblica+K2&dates=20261114T150000Z/20261115T010000Z&details=Comemora%C3%A7%C3%A3o+de+20+anos+da+Rep%C3%BAblica+K2+%282006-2026%29.+Costela+de+ch%C3%A3o%2C+drinks%2C+Pagode+Pura+Levada%2C+Tales+e+Show+de+Pr%C3%AAmios.&location=Recanto+das+Palmeiras+-+Four-Bedroom+House%2C+-22.4459991%2C+-45.5020218"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-imperial btn-bonina"
+            >
+              Salvar na Agenda (14/11)
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divisor Silhueta da Montanha K2 (8.611m) -->
+      <div class="k2-mountain-divider" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" class="k2-svg">
+          <polygon points="0,120 180,92 340,104 520,58 640,76 720,12 810,68 940,46 1120,88 1280,72 1440,120" fill="var(--bg-bonina)" />
+          <polyline points="0,118 180,92 340,104 520,58 640,76 720,12 810,68 940,46 1120,88 1280,72 1440,118" fill="none" stroke="var(--gold-royal)" stroke-width="2" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2: A LENDA & A IRMANDADE (BANHADA EM VERMELHO BONINA IMPERIAL) -->
+    <section class="history-section" id="historia">
+      <div class="container">
+        <div class="heraldic-crest-header">
+          <div class="crest-line" aria-hidden="true"></div>
+          <div class="crest-emblem" aria-hidden="true">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <path d="M20 4L35 32H5L20 4Z" stroke="currentColor" stroke-width="2"/>
+              <path d="M20 12L27 26H13L20 12Z" fill="currentColor"/>
+            </svg>
+          </div>
+          <div class="crest-line" aria-hidden="true"></div>
+        </div>
+
+        <div class="history-layout">
+          <div class="history-narrative">
+            <h2 class="section-heading">
+              Da Montanha Mais Severa da Terra a <span class="gold-solid">20 Anos de Reinado</span>
+            </h2>
+
+            <p class="history-paragraph">
+              Com <strong>8.611 metros de altitude</strong> na cordilheira do Karakoram, o <strong>K2</strong> é conhecido no mundo inteiro como a montanha mais desafiadora do planeta. Ninguém conquista o seu cume sozinho: chegar ao topo exige lealdade absoluta, parceria e uma irmandade que jamais abandona um irmão no caminho.
+            </p>
+
+            <p class="history-paragraph">
+              Foi sob essa filosofia que nasceu a <strong>República K2 em 2006</strong>. Ao longo de <strong>20 anos</strong> de trajetória em Itajubá, dezenas de moradores escreveram seus nomes nessa fortaleza, formaram-se, constituíram famílias e mantiveram erguido o estandarte vermelho bonina e amarelo.
+            </p>
+
+            <p class="history-paragraph">
+              No sábado, <strong>14 de novembro de 2026, a partir das 12h</strong>, todas as gerações se reúnem novamente sob o mesmo brasão para celebrar duas décadas no topo.
+            </p>
+
+            <!-- Marcos em Números Normais -->
+            <div class="pillars-row">
+              <div class="pillar-box">
+                <strong class="pillar-num">2006</strong>
+                <span class="pillar-caption">Fundação da República K2</span>
+              </div>
+              <div class="pillar-box">
+                <strong class="pillar-num">20 Anos</strong>
+                <span class="pillar-caption">De Tradição &amp; Irmandade</span>
+              </div>
+              <div class="pillar-box">
+                <strong class="pillar-num">8.611m</strong>
+                <span class="pillar-caption">Altitude da Montanha K2</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Retrato Oficial da Família K2 (com ampliação em Lightbox) -->
+          <figure class="royal-portrait-frame royal-corners">
+            <button
+              type="button"
+              class="portrait-zoom-trigger"
+              data-lightbox-src="imagens/Moradores.jpg"
+              data-lightbox-caption="Família República K2 reunida: moradores, ex-moradores e filhos sob o mesmo brasão."
+              aria-label="Ampliar foto da Família República K2 em tela cheia"
+            >
+              <img
+                src="imagens/Moradores.jpg"
+                alt="Gerações de moradores, ex-moradores e filhos reunidos segurando a bandeira com o brasão da República K2"
+                class="portrait-img"
+                width="960"
+                height="560"
+                loading="lazy"
+              >
+              <span class="zoom-pill">Ampliar Foto da Família K2</span>
+            </button>
+            <figcaption class="portrait-caption">
+              <svg class="caption-crown" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3 18H21V20H3V18ZM3 15L5 7L9.5 11.5L12 5L14.5 11.5L19 7L21 15H3Z" fill="currentColor"/>
+              </svg>
+              <span>A Corte Reunida: gerações de moradores, ex-moradores e suas famílias honrando o escudo da República K2.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Divisor Inferior Bonina -> Obsidiana -->
+      <div class="k2-mountain-divider divider-bottom" aria-hidden="true">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none" class="k2-svg">
+          <polygon points="0,100 240,56 480,82 720,14 960,78 1200,48 1440,100" fill="var(--bg-obsidian)" />
+          <polyline points="0,98 240,56 480,82 720,14 960,78 1200,48 1440,98" fill="none" stroke="var(--gold-royal)" stroke-width="2" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3: O BANQUETE REAL — CARDÁPIO COMPLETO (CARNES, GUARNIÇÕES E DRINKS) -->
+    <section class="banquet-section" id="banquete">
+      <div class="container">
+        <div class="banquet-intro">
+          <h2 class="section-heading">
+            O Grande Banquete Real &amp; <span class="gold-solid">Carta de Drinks</span>
+          </h2>
+          <p class="section-subcopy">
+            Do fogo de chão aceso cedo às grelhas fumegantes e bar completo a tarde inteira. Confira todos os <strong>22 itens de gastronomia</strong> e os <strong>5 drinks oficiais</strong> preparados para os 20 anos da K2.
+          </p>
+
+          <!-- Filtro Interativo do Banquete (Mostra tudo por padrão) -->
+          <div class="banquet-filter-bar" role="toolbar" aria-label="Filtrar categorias do cardápio">
+            <button type="button" class="filter-chip is-active" data-filter="all" aria-pressed="true">
+              Banquete Completo (27)
+            </button>
+            <button type="button" class="filter-chip" data-filter="carnes" aria-pressed="false">
+              Carnes &amp; Fogo de Chão (8)
+            </button>
+            <button type="button" class="filter-chip" data-filter="guarnicoes" aria-pressed="false">
+              Na Grelha &amp; Mesa (14)
+            </button>
+            <button type="button" class="filter-chip" data-filter="drinks" aria-pressed="false">
+              Carta de Drinks (5)
+            </button>
+          </div>
+        </div>
+
+        <!-- PARTE 1: A CORTE DAS CARNES & FOGO DE CHÃO -->
+        <div class="banquet-board royal-corners" data-banquet-group="carnes">
+          <div class="board-header">
+            <div class="board-title-group">
+              <svg class="board-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 2C9.5 6 7 8.5 7 13C7 16.5 9.5 19.5 12 22C14.5 19.5 17 16.5 17 13C17 8.5 14.5 6 12 2ZM12 18C10.3 16.5 9.5 14.8 9.5 13C9.5 10.8 10.7 9.2 12 7.2C13.3 9.2 14.5 10.8 14.5 13C14.5 14.8 13.7 16.5 12 18Z" fill="currentColor"/>
+              </svg>
+              <div>
+                <h3 class="board-title">Carnes Nobres &amp; Fogo de Chão</h3>
+                <p class="board-subtitle">8 cortes selecionados assados na brasa e no fogo de chão</p>
+              </div>
+            </div>
+            <span class="board-seal">8 Cortes Confirmados</span>
+          </div>
+
+          <!-- Destaque Principal: Costela de Chão -->
+          <div class="featured-cut-banner">
+            <div class="featured-cut-badge">Coroa do Churrasco • Fogo de Chão</div>
+            <div class="featured-cut-main">
+              <h4 class="featured-cut-name">Costela de Chão</h4>
+              <p class="featured-cut-desc">
+                Assada lentamente no fogo de chão ao estilo clássico das grandes festas da K2, suculenta e desmanchando para abrir o banquete de 20 anos.
+              </p>
+            </div>
+          </div>
+
+          <!-- Os demais 7 Cortes de Carne -->
+          <ul class="meats-roster" aria-label="Cortes de carne do churrasco">
+            <li class="meat-item">
+              <div class="meat-item-top">
+                <span class="meat-name">Picanha</span>
+                <span class="meat-fire">Brasa Nobre</span>
+              </div>
+              <span class="meat-tag">Corte principal grelhado na hora</span>
+            </li>
+            <li class="meat-item">
+              <div class="meat-item-top">
+                <span class="meat-name">Fraldinha</span>
+                <span class="meat-fire">Brasa Viva</span>
+              </div>
+              <span class="meat-tag">Corte macio e suculento na grelha</span>
+            </li>
+            <li class="meat-item">
+              <div class="meat-item-top">
+                <span class="meat-name">Picanha Suína</span>
+                <span class="meat-fire">Grelha Alta</span>
+              </div>
+              <span class="meat-tag">Temperada e dourada na brasa</span>
+            </li>
+            <li class="meat-item">
+              <div class="meat-item-top">
+                <span class="meat-name">Panceta</span>
+                <span class="meat-fire">Crocante</span>
+              </div>
+              <span class="meat-tag">Assada até dourar na churrasqueira</span>
+            </li>
+            <li class="meat-item">
+              <div class="meat-item-top">
+                <span class="meat-name">Linguiça Toscana</span>
+                <span class="meat-fire">Tradição</span>
+              </div>
+              <span class="meat-tag">Clássico indispensável de abertura</span>
+            </li>
+            <li class="meat-item">
+              <div class="meat-item-top">
+                <span class="meat-name">Coração de Galinha</span>
+                <span class="meat-fire">Espeto Real</span>
+              </div>
+              <span class="meat-tag">Temperado no ponto certo da brasa</span>
+            </li>
+            <li class="meat-item">
+              <div class="meat-item-top">
+                <span class="meat-name">Tulipinha</span>
+                <span class="meat-fire">Brasa Dourada</span>
+              </div>
+              <span class="meat-tag">Meio da asa crocante e suculenta</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- PARTE 2: GUARNIÇÕES DA GRELHA & ACOMPANHAMENTOS -->
+        <div class="banquet-board royal-corners" data-banquet-group="guarnicoes">
+          <div class="board-header">
+            <div class="board-title-group">
+              <svg class="board-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M11 9H9V2H7V9H5V2H3V9C3 11.12 4.66 12.84 6.75 12.97V22H9.25V12.97C11.34 12.84 13 11.12 13 9V2H11V9ZM16 6V14H18.5V22H21V2C18.24 2 16 4.24 16 6Z" fill="currentColor"/>
+              </svg>
+              <div>
+                <h3 class="board-title">Grelhados &amp; Guarnições da Mesa Real</h3>
+                <p class="board-subtitle">14 acompanhamentos entre assados na brasa e clássicos de churrasco</p>
+              </div>
+            </div>
+            <span class="board-seal">14 Guarnições</span>
+          </div>
+
+          <div class="sides-Split">
+            <div class="sides-column">
+              <h4 class="sides-heading">Assados na Brasa &amp; Grelha (10 Itens)</h4>
+              <ul class="sides-list">
+                <li><strong>Queijo Coalho</strong> <span>Tostado na brasa</span></li>
+                <li><strong>Abacaxi</strong> <span>Assado na grelha</span></li>
+                <li><strong>Cogumelo</strong> <span>Na manteiga e brasa</span></li>
+                <li><strong>Batata Doce</strong> <span>Assada no calor da brasa</span></li>
+                <li><strong>Milho</strong> <span>Dourado na churrasqueira</span></li>
+                <li><strong>Pimentão</strong> <span>Defumado no fogo</span></li>
+                <li><strong>Berinjela</strong> <span>Grelhada com tempero</span></li>
+                <li><strong>Abobrinha</strong> <span>Laminada na grelha</span></li>
+                <li><strong>Alho</strong> <span>Assado inteiro e macio</span></li>
+                <li><strong>Pão Francês</strong> <span>Quente na grelha</span></li>
+              </ul>
+            </div>
+
+            <div class="sides-column">
+              <h4 class="sides-heading">Guarnições Clássicas da Mesa (4 Itens)</h4>
+              <ul class="sides-list">
+                <li><strong>Maionese</strong> <span>Receita tradicional</span></li>
+                <li><strong>Creme de Cebola</strong> <span>Cremoso para os cortes</span></li>
+                <li><strong>Vinagrete</strong> <span>Fresco para o churrasco</span></li>
+                <li><strong>Arroz</strong> <span>Soltinho no capricho</span></li>
+              </ul>
+
+              <div class="banquet-note">
+                <strong>Banquete Completo a Tarde Toda:</strong> A churrasqueira e a mesa de guarnições começam a partir das <strong>12h</strong> no Recanto das Palmeiras.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PARTE 3: ALQUIMIA REAL — CARTA DE DRINKS CHURRAS 20 ANOS -->
+        <div class="drinks-decree royal-corners" id="drinks" data-banquet-group="drinks">
+          <div class="board-header drinks-header">
+            <div class="board-title-group">
+              <svg class="board-icon" width="30" height="30" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 3H19L20 5L13 13V19H17V21H7V19H11V13L4 5L5 3ZM7.4 6L12 11.2L16.6 6H7.4Z" fill="currentColor"/>
+              </svg>
+              <div>
+                <h3 class="board-title">Carta Oficial de Drinks — Churras 20 Anos</h3>
+                <p class="board-subtitle">5 drinks preparados na hora com frutas frescas, gin, vodka e cachaça</p>
+              </div>
+            </div>
+            <span class="board-seal">5 Drinks Oficiais</span>
+          </div>
+
+          <div class="drinks-ledger">
+            <article class="drink-entry">
+              <div class="drink-top">
+                <h4 class="drink-name">Sex on the Beach</h4>
+                <span class="drink-Number">Drink 1</span>
+              </div>
+              <p class="drink-profile">Refrescante, frutado e clássico das festas da K2.</p>
+              <ul class="drink-ingredients" aria-label="Ingredientes do Sex on the Beach">
+                <li>Vodka</li>
+                <li>Licor de pêssego</li>
+                <li>Suco de laranja</li>
+                <li>Groselha</li>
+                <li>Gelo</li>
+              </ul>
+            </article>
+
+            <article class="drink-entry">
+              <div class="drink-top">
+                <h4 class="drink-name">Gin com Tônica</h4>
+                <span class="drink-Number">Drink 2</span>
+              </div>
+              <p class="drink-profile">Cítrico, seco e gelado na medida para o sol da tarde.</p>
+              <ul class="drink-ingredients" aria-label="Ingredientes do Gin com Tônica">
+                <li>Gin</li>
+                <li>Tônica</li>
+                <li>Limão</li>
+                <li>Gelo</li>
+              </ul>
+            </article>
+
+            <article class="drink-entry">
+              <div class="drink-top">
+                <h4 class="drink-name">Gin Tropical</h4>
+                <span class="drink-Number">Drink 3</span>
+              </div>
+              <p class="drink-profile">Combinação aromática de gin com laranja fresca.</p>
+              <ul class="drink-ingredients" aria-label="Ingredientes do Gin Tropical">
+                <li>Gin</li>
+                <li>Tônica</li>
+                <li>Laranja</li>
+                <li>Suco de laranja</li>
+                <li>Gelo</li>
+              </ul>
+            </article>
+
+            <article class="drink-entry">
+              <div class="drink-top">
+                <h4 class="drink-name">Batida</h4>
+                <span class="drink-Number">Drink 4</span>
+              </div>
+              <p class="drink-profile">Cremosa com fruta da estação, no capricho de república.</p>
+              <ul class="drink-ingredients" aria-label="Ingredientes da Batida">
+                <li>Cachaça / Vodka</li>
+                <li>Leite condensado</li>
+                <li>Fruta</li>
+                <li>Gelo</li>
+              </ul>
+            </article>
+
+            <article class="drink-entry">
+              <div class="drink-top">
+                <h4 class="drink-name">Caipirinha / Caipiroska</h4>
+                <span class="drink-Number">Drink 5</span>
+              </div>
+              <p class="drink-profile">O par perfeito para a costela de chão e picanha na brasa.</p>
+              <ul class="drink-ingredients" aria-label="Ingredientes da Caipirinha e Caipiroska">
+                <li>Cachaça / Vodka</li>
+                <li>Fruta</li>
+                <li>Açúcar</li>
+                <li>Gelo</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 4: ATRAÇÕES & FESTIVIDADES DA CORTE -->
+    <section class="attractions-section" id="atracoes">
+      <div class="container">
+        <div class="attractions-layout">
+          <!-- Pôster Oficial das Atrações (Com Lightbox) -->
+          <div class="poster-showcase">
+            <div class="poster-frame royal-corners">
+              <button
+                type="button"
+                class="portrait-zoom-trigger"
+                data-lightbox-src="imagens/Pura%20Levada%20e%20Tales.jpeg"
+                data-lightbox-caption="Pôster Oficial Churras 20 — República K2: Pura Levada (Pagode) e Tales (MPB, Rock & Sertanejo)."
+                aria-label="Ampliar pôster oficial das atrações em tela cheia"
+              >
+                <img
+                  src="imagens/Pura%20Levada%20e%20Tales.jpeg"
+                  alt="Arte oficial Churras 20 República K2 com as atrações Pura Levada (Pagode) e Tales (MPB, Rock e Sertanejo)"
+                  class="poster-img"
+                  width="640"
+                  height="915"
+                  loading="lazy"
+                >
+                <span class="zoom-pill">Ampliar Arte Oficial</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Programação das 3 Atrações Confirmadas -->
+          <div class="attractions-details">
+            <h2 class="section-heading">
+              Música ao Vivo &amp; <span class="gold-solid">Festividades do Reino</span>
+            </h2>
+            <p class="section-subcopy">
+              A trilha sonora dos 20 anos reúne roda de pagode ao vivo, clássicos de MPB, rock e sertanejo, além do tradicional bingo comemorativo da K2.
+            </p>
+
+            <div class="lineup-stack">
+              <article class="lineup-item">
+                <div class="lineup-badge">Atração Musical 1</div>
+                <h3 class="lineup-artist">Pagode Pura Levada</h3>
+                <p class="lineup-genre">Pagode ao Vivo</p>
+                <p class="lineup-desc">
+                  Roda de pagode completa para levantar o astral da piscina e colocar todas as gerações da K2 para cantar junto do início ao fim.
+                </p>
+              </article>
+
+              <article class="lineup-item">
+                <div class="lineup-badge">Atração Musical 2</div>
+                <h3 class="lineup-artist">Tales</h3>
+                <p class="lineup-genre">MPB, Rock &amp; Sertanejo</p>
+                <p class="lineup-desc">
+                  Um repertório versátil que atravessa os hinos universitários, clássicos do rock nacional, MPB e sertanejo para embalar o churrasco.
+                </p>
+              </article>
+
+              <article class="lineup-item lineup-bingo royal-corners">
+                <div class="lineup-badge">Tradição Especial K2</div>
+                <h3 class="lineup-artist">Bingo — Show de Prêmios</h3>
+                <p class="lineup-genre">Disputa Real &amp; Prêmios Exclusivos</p>
+                <p class="lineup-desc">
+                  Prepare a cartela: teremos rodadas especiais de Bingo com Show de Prêmios durante a festa para testar a sorte dos moradores, ex-moradores e convidados.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 5: O DOMÍNIO REAL — LOCALIZAÇÃO & MAPA (RECANTO DAS PALMEIRAS) -->
+    <section class="venue-section" id="local">
+      <div class="container">
+        <div class="venue-header">
+          <h2 class="section-heading">
+            O Domínio da Festa: <span class="gold-solid">Recanto das Palmeiras</span>
+          </h2>
+          <p class="section-subcopy">
+            Um espaço amplo cercado pela serra, com casarão avarandado, piscina, gramado e toda a estrutura para receber a família K2 com conforto no dia <strong>14/11 a partir das 12h</strong>.
+          </p>
+        </div>
+
+        <div class="venue-showcase-grid">
+          <!-- Foto do Sítio (Com Lightbox) -->
+          <figure class="venue-photo-frame royal-corners">
+            <button
+              type="button"
+              class="portrait-zoom-trigger venue-zoom-btn"
+              data-lightbox-src="imagens/FotoSitio.png"
+              data-lightbox-caption="Recanto das Palmeiras — Local oficial do Churrasco de 20 Anos da República K2."
+              aria-label="Ampliar foto do sítio Recanto das Palmeiras em tela cheia"
+            >
+              <img
+                src="imagens/FotoSitio.png"
+                alt="Vista panorâmica do Recanto das Palmeiras com casarão de tijolos aparentes, varanda, palmeiras, gramado, piscina e montanhas ao fundo"
+                class="venue-photo-img"
+                width="960"
+                height="540"
+                loading="lazy"
+              >
+              <span class="zoom-pill">Ver Foto do Sítio em Tela Cheia</span>
+            </button>
+            <figcaption class="venue-photo-caption">
+              <span>Recanto das Palmeiras — Estrutura completa com piscina, área verde, varanda e espaço gourmet.</span>
+            </figcaption>
+          </figure>
+
+          <!-- Painel de Chegada + Mapa Incorporado -->
+          <div class="venue-map-panel royal-corners">
+            <div class="venue-info-box">
+              <div class="venue-info-row">
+                <span class="venue-info-label">Local do Evento</span>
+                <strong class="venue-info-value">Recanto das Palmeiras (Four-Bedroom House)</strong>
+              </div>
+              <div class="venue-info-row">
+                <span class="venue-info-label">Data e Horário</span>
+                <strong class="venue-info-value">Sábado, 14/11/2026 • A partir das 12h (Meio-dia)</strong>
+              </div>
+              <div class="venue-info-row">
+                <span class="venue-info-label">Coordenadas GPS</span>
+                <strong class="venue-info-value">-22.4459991, -45.5020218</strong>
+              </div>
+            </div>
+
+            <div class="map-embed-frame">
+              <iframe
+                title="Mapa de localização do Recanto das Palmeiras"
+                src="https://www.google.com/maps?q=-22.4459991,-45.5020218&hl=pt-BR&z=16&output=embed"
+                width="100%"
+                height="250"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+
+            <div class="venue-actions">
+              <a
+                href="https://www.google.com/maps/place/Recanto+das+Palmeiras+-+Four-Bedroom+House/@-22.4459991,-45.5045967,17z/data=!4m10!3m9!1s0x94cb7c6df91d06d7:0x5586f8da692b2b54!5m2!4m1!1i2!8m2!3d-22.4459991!4d-45.5020218!16s%2Fg%2F11yn24_f24!17BQ0FF?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-imperial btn-gold btn-full"
+              >
+                Abrir Rota no Google Maps
+              </a>
+              <button
+                type="button"
+                class="btn-imperial btn-bonina btn-full"
+                id="copy-map-btn"
+                data-map-url="https://www.google.com/maps/place/Recanto+das+Palmeiras+-+Four-Bedroom+House/@-22.4459991,-45.5045967,17z/data=!4m10!3m9!1s0x94cb7c6df91d06d7:0x5586f8da692b2b54!5m2!4m1!1i2!8m2!3d-22.4459991!4d-45.5020218!16s%2Fg%2F11yn24_f24!17BQ0FF?entry=ttu&g_ep=EgoyMDI2MTAyOC4wIKXMDSoASAFQAw%3D%3D"
+              >
+                Copiar Link da Localização
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL NATIVO (<dialog>) PARA VISUALIZAÇÃO DE FOTOS EM TELA CHEIA -->
+  <dialog class="royal-lightbox" id="photo-lightbox" aria-label="Visualização de imagem ampliada">
+    <div class="lightbox-frame royal-corners">
+      <div class="lightbox-topbar">
+        <span class="lightbox-brand">República K2 • 20 Anos</span>
+        <button type="button" class="lightbox-close" id="lightbox-close-btn" aria-label="Fechar imagem ampliada">
+          <span>Fechar</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="lightbox-body">
+        <img src="imagens/Moradores.jpg" alt="Família República K2 reunida" id="lightbox-img" class="lightbox-img">
+      </div>
+      <p class="lightbox-caption" id="lightbox-caption">Família República K2 reunida</p>
+    </div>
+  </dialog>
+
+  <!-- RODAPÉ IMPERIAL -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img
+        src="imagens/Logo%20Churras.png"
+        alt="Brasão República K2 Churrasco 20 Anos"
+        class="footer-crest"
+        width="96"
+        height="96"
+        loading="lazy"
+      >
+      <p class="footer-title">República K2 • Churrasco de 20 Anos</p>
+      <p class="footer-meta">14 de Novembro de 2026 • A partir das 12h • Recanto das Palmeiras</p>
+      <p class="footer-motto">2006 – 2026 • 20 Anos no Topo da Montanha</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
