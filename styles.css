@@ -1522,7 +1522,7 @@ p {
   }
 
   .hero-logo-img {
-    width: min(78vw, 340px);
+    width: min(72vw, 300px);
   }
 
   .poster-showcase {
@@ -1531,9 +1531,44 @@ p {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   html {
-    scroll-padding-top: 7.5rem;
+    scroll-padding-top: 7rem;
+  }
+
+  .container {
+    padding: 0.75rem 1rem;
+  }
+
+  /* Header compacto e harmonioso */
+  .header-inner {
+    min-height: 3.85rem;
+    padding-block: 0.35rem;
+    gap: 0.75rem;
+  }
+
+  .brand-crest {
+    gap: 0.55rem;
+    min-height: 40px;
+  }
+
+  .brand-crest-img {
+    width: 2.35rem;
+    height: 2.35rem;
+  }
+
+  .brand-name {
+    font-size: 0.95rem;
+  }
+
+  .brand-years {
+    font-size: 0.72rem;
+  }
+
+  .header-date-seal {
+    min-height: 38px;
+    padding: 0.35rem 0.65rem;
+    font-size: 0.78rem;
   }
 
   .site-nav {
@@ -1542,30 +1577,503 @@ p {
 
   .mobile-quick-nav {
     display: flex;
+    justify-content: space-around;
+  }
+
+  .mobile-nav-item {
+    font-size: 0.78rem;
+    padding-inline: 0.45rem;
+    min-height: 40px;
+  }
+
+  /* Hero no celular */
+  .hero-section {
+    padding-top: 1.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .hero-logo-img {
+    width: min(65vw, 220px);
+  }
+
+  .crest-pedestal {
+    padding: 0.5rem;
+    gap: 0.5rem;
+  }
+
+  .altitude-badge {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.65rem;
+    white-space: nowrap;
+  }
+
+  .hero-content {
+    gap: 1.1rem;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: clamp(1.75rem, 6.8vw, 2.35rem);
+    line-height: 1.15;
+  }
+
+  .hero-lead {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-inline: auto;
+  }
+
+  /* Decreto: 3 linhas bem delineadas e organizadas */
+  .decree-plaque {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.75rem 1rem;
+    text-align: left;
   }
 
   .decree-divider {
     display: none;
   }
 
-  .decree-plaque {
-    flex-direction: column;
-    align-items: flex-start;
+  .decree-item {
+    padding: 0.85rem 0.5rem;
+    border-bottom: 1px solid var(--gold-border);
   }
 
-  .pillars-row {
-    grid-template-columns: 1fr;
+  .decree-item:first-child {
+    padding-top: 0.5rem;
   }
 
-  .lore-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-top: 2rem;
+  .decree-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0.5rem;
+  }
+
+  .decree-label {
+    font-size: 0.75rem;
+  }
+
+  .decree-value {
+    font-size: 0.98rem;
+  }
+
+  /* Countdown sem quebra de linhas */
+  .countdown-frame {
+    padding: 0.85rem 0.75rem;
+  }
+
+  .countdown-title {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.35rem;
+    max-width: 100%;
+  }
+
+  .countdown-sep {
+    display: none;
   }
 
   .countdown-unit {
-    min-width: 3.9rem;
-    padding: 0.45rem 0.55rem;
+    min-width: unset;
+    width: 100%;
+    padding: 0.45rem 0.2rem;
+  }
+
+  .countdown-number {
+    font-size: 1.4rem;
+  }
+
+  .countdown-label {
+    font-size: 0.7rem;
+    margin-top: 0.1rem;
+  }
+
+  /* Botões do Hero em largura total e confortáveis para o polegar */
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .btn-imperial {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    font-size: 0.9rem;
+    min-height: 48px;
+  }
+
+  /* Seção História */
+  .history-section {
+    padding: 2.75rem 1rem 4.75rem 1rem;
+  }
+
+  .section-heading {
+    font-size: clamp(1.5rem, 5.8vw, 2rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .history-paragraph {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* 3 Pilares em régua uniforme de 3 colunas */
+  .pillars-row {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.45rem;
+    margin-top: 1.25rem;
+  }
+
+  .pillar-box {
+    padding: 0.65rem 0.35rem;
+    text-align: center;
+    gap: 0.15rem;
+  }
+
+  .pillar-num {
+    font-size: clamp(1.05rem, 3.8vw, 1.35rem);
+  }
+
+  .pillar-caption {
+    font-size: 0.72rem;
+    line-height: 1.25;
+  }
+
+  /* Retrato da Família */
+  .royal-portrait-frame {
+    padding: 0.65rem;
+    margin-top: 1.5rem;
+  }
+
+  .zoom-pill {
+    font-size: 0.72rem;
+    padding: 0.3rem 0.55rem;
+    right: 0.45rem;
+    bottom: 0.45rem;
+  }
+
+  .portrait-caption {
+    font-size: 0.82rem;
+    padding-top: 0.65rem;
+  }
+
+  /* 2 Cards da Tradição (Hino e Planejamento) */
+  .lore-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+    margin-top: 1.75rem;
+  }
+
+  .lore-card {
+    min-height: 64px;
+    padding: 1.15rem 1.25rem;
+  }
+
+  .lore-card-title {
+    font-size: 1.05rem;
+  }
+
+  /* Banquete (Cardápio & Drinks) */
+  .banquet-section {
+    padding: 3.25rem 1rem;
+  }
+
+  .banquet-intro {
+    margin-bottom: 1.75rem;
+  }
+
+  .section-subcopy {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  /* Filtros em grade 2x2 equilibrada */
+  .banquet-filter-bar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    gap: 0.45rem;
+    margin-top: 1.25rem;
+  }
+
+  .filter-chip {
+    min-height: 42px;
+    padding: 0.5rem 0.35rem;
+    font-size: 0.78rem;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .banquet-board,
+  .drinks-decree {
+    padding: 1.25rem 0.85rem;
+    outline-offset: -5px;
+    margin-bottom: 1.75rem;
+  }
+
+  .board-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .board-title-group {
+    gap: 0.65rem;
+  }
+
+  .board-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .board-title {
+    font-size: 1.25rem;
+  }
+
+  .board-subtitle {
+    font-size: 0.82rem;
+  }
+
+  .board-seal {
+    font-size: 0.74rem;
+    padding: 0.25rem 0.65rem;
+    align-self: flex-start;
+  }
+
+  /* Destaque Picanha */
+  .featured-cut-banner {
+    padding: 1rem 0.85rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .featured-cut-name {
+    font-size: 1.35rem;
+  }
+
+  .featured-cut-desc {
+    font-size: 0.88rem;
+  }
+
+  /* Grade de Carnes */
+  .meats-roster {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .meat-item {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .meat-name {
+    font-size: 1rem;
+  }
+
+  .meat-tag {
+    font-size: 0.82rem;
+  }
+
+  /* Guarnições */
+  .sides-Split {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .sides-heading {
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .sides-list {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .sides-list li {
+    font-size: 0.88rem;
+    gap: 0.5rem;
+  }
+
+  .sides-list span {
+    font-size: 0.8rem;
+  }
+
+  .banquet-note {
+    font-size: 0.84rem;
+    padding: 0.75rem 0.85rem;
+    margin-top: 1rem;
+  }
+
+  /* Drinks */
+  .drinks-ledger {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .drink-entry {
+    padding: 1rem 0.85rem;
+    gap: 0.6rem;
+  }
+
+  .drink-name {
+    font-size: 1.1rem;
+  }
+
+  .drink-profile {
+    font-size: 0.82rem;
+  }
+
+  .drink-ingredients li {
+    font-size: 0.78rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  /* Atrações & Local */
+  .attractions-section,
+  .venue-section {
+    padding: 3.25rem 1rem;
+  }
+
+  .lineup-item {
+    padding: 1rem 0.85rem;
+  }
+
+  .lineup-artist {
+    font-size: 1.25rem;
+  }
+
+  .lineup-genre {
+    font-size: 0.84rem;
+  }
+
+  .lineup-desc {
+    font-size: 0.88rem;
+  }
+
+  .venue-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .venue-photo-frame {
+    padding: 0.65rem;
+  }
+
+  .venue-photo-img {
+    max-height: 240px;
+  }
+
+  .venue-photo-caption {
+    font-size: 0.82rem;
+  }
+
+  .venue-map-panel {
+    padding: 1rem 0.85rem;
+    gap: 0.85rem;
+  }
+
+  .venue-info-value {
+    font-size: 0.9rem;
+  }
+
+  .map-embed-frame iframe {
+    height: 210px;
+  }
+
+  /* Modais no Celular */
+  .royal-doc-modal,
+  .royal-lightbox {
+    width: 95vw;
+    padding: 0.85rem;
+    max-height: 88vh;
+  }
+
+  .doc-modal-frame,
+  .lightbox-frame {
+    gap: 0.85rem;
+    max-height: calc(88vh - 1.7rem);
+  }
+
+  .doc-modal-title {
+    font-size: 1.15rem;
+  }
+
+  .lightbox-close {
+    padding: 0.35rem 0.65rem;
+    font-size: 0.78rem;
+    min-height: 38px;
+  }
+
+  .doc-poem-layout {
+    font-size: 0.94rem;
+    line-height: 1.65;
+    gap: 1rem;
+  }
+
+  .poem-chorus {
+    font-size: 1.15rem;
+  }
+
+  .doc-strat-layout {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    gap: 1rem;
+  }
+
+  .strat-heading {
+    font-size: 1.05rem;
+  }
+
+  /* Rodapé */
+  .site-footer {
+    padding-block: 2.25rem 1.75rem;
+  }
+
+  .footer-crest {
+    width: 4.5rem;
+    height: 4.5rem;
+  }
+
+  .footer-title {
+    font-size: 1.1rem;
+  }
+
+  .footer-meta {
+    font-size: 0.85rem;
+  }
+
+  .footer-motto {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .brand-name {
+    font-size: 0.86rem;
+  }
+
+  .header-date-seal {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.45rem;
+  }
+
+  .filter-chip {
+    font-size: 0.72rem;
+    padding: 0.4rem 0.2rem;
+  }
+
+  .countdown-number {
+    font-size: 1.25rem;
   }
 }
 
